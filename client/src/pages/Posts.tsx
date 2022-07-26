@@ -12,17 +12,27 @@ function Posts() {
 
     let allPosts = posts.map(post => {
         console.log(post);
-            var link = `/dashboard/edit/${post.id}`;
-            return(
-                <a className="list-item flex-row justify-space-between" href={link}>
-                    <span>{post.postTitle}</span>
-                </a>
-            )
-        }   
+        var link = `/post/${post.id}`;
+        return (
+            <article className="card">
+                <div className="card-header flex-row justify-space-between">
+                    <h2>
+                        <a href={link}>{post.postTitle}</a>
+                    </h2>
+                    <div>
+                        Posted by User
+                    </div>
+                </div>
+                <div className="card-body">
+                    {post.postBody}
+                </div>
+            </article>
+        )
+    }
     )
 
-    return(
-        <div className="posts list-group">
+    return (
+        <div className="posts">
             {allPosts}
         </div>
     )
