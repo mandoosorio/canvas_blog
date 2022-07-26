@@ -11,10 +11,11 @@ function Posts() {
     }, []);
 
     let allPosts = posts.map(post => {
+        console.log(post);
             var link = `/dashboard/edit/${post.id}`;
             return(
                 <a className="list-item flex-row justify-space-between" href={link}>
-                    <span>{post.title}</span>
+                    <span>{post.postTitle}</span>
                 </a>
             )
         }   
